@@ -15,6 +15,9 @@ namespace MagicVilla_API.Datos
         //se crea tablas en BD
         public DbSet<Villa> Villas { get; set; }
 
+        //migracion para tabla en BD 
+        public DbSet<NumeroVilla> NumeroVillas { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Villa>().HasData(
