@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using AutoMapper;
 using MagicVilla_API.Datos;
 using MagicVilla_API.Modelos;
 using MagicVilla_API.Modelos.Dto;
@@ -82,7 +81,7 @@ namespace MagicVilla_API.Controllers
         //2- Obtenemos la informacion del Store pero solo un valor determinado, no una lista como en el 1.
         //Hay que diferenciar los endpionts ya que no se pueden tener 2 mismos del HTTPGET, se diferencia poniendo en su atributo
         //que en este caso será el ID
-        [HttpGet("id:int", Name = "GetVilla")] //Le asignamos nombre
+        [HttpGet("{id:int}", Name = "GetVilla")] //Le asignamos nombre
         [ProducesResponseType(StatusCodes.Status200OK)]//codigos de estado
         [ProducesResponseType(StatusCodes.Status400BadRequest)]//codigos de estado
         [ProducesResponseType(StatusCodes.Status404NotFound)]//codigos de estado
@@ -150,7 +149,7 @@ namespace MagicVilla_API.Controllers
                 //para validar el no meter 2 parametros con el mismo nombre. VillaDto es lo que estoy enviando
                 if (await _villaRepo.Obtener(v => v.Nombre.ToLower() == createDto.Nombre.ToLower()) != null)
                 {
-                    ModelState.AddModelError("NombreExiste", "La Villa con ese nombre ya existe perra");
+                    ModelState.AddModelError("ErrorMessages", "La Villa con ese nombre ya existe perra");
                     return BadRequest(ModelState);
                 }
 
