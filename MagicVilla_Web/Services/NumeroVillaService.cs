@@ -16,50 +16,55 @@ namespace MagicVilla_Web.Services
             _villaUrl = configuration.GetValue<string>("ServiceUrls:API_URL");
         }
 
-        public Task<T> Actualizar<T>(NumeroVillaUpdateDto dto)
+        public Task<T> Actualizar<T>(NumeroVillaUpdateDto dto, string token)
         {
             return SendAsync<T>(new APIRequest()
             {
                 APITipo = DS.APITipo.PUT,
                 Datos = dto,
-                URL = _villaUrl + "/api/NumeroVilla/" + dto.VillaNo
+                URL = _villaUrl + "/api/NumeroVilla/" + dto.VillaNo,
+                Token = token
             });
         }
 
-        public Task<T> Crear<T>(NumeroVillaCreateDto dto)
+        public Task<T> Crear<T>(NumeroVillaCreateDto dto, string token)
         {
             return SendAsync<T>(new APIRequest()
             {
                 APITipo = DS.APITipo.POST,
                 Datos = dto,
-                URL = _villaUrl + "/api/NumeroVilla"
+                URL = _villaUrl + "/api/NumeroVilla",
+                Token = token
             });
         }
 
-        public Task<T> Obtener<T>(int id)
+        public Task<T> Obtener<T>(int id, string token)
         {
             return SendAsync<T>(new APIRequest()
             {
                 APITipo = DS.APITipo.GET,
-                URL = _villaUrl + "/api/NumeroVilla/" + id
+                URL = _villaUrl + "/api/NumeroVilla/" + id,
+                Token = token
             });
         }
 
-        public Task<T> ObtenerTodos<T>()
+        public Task<T> ObtenerTodos<T>(string token)
         {
             return SendAsync<T>(new APIRequest()
             {
                 APITipo = DS.APITipo.GET,
-                URL = _villaUrl + "/api/NumeroVilla"
+                URL = _villaUrl + "/api/NumeroVilla",
+                Token = token
             });
         }
 
-        public Task<T> Remover<T>(int id)
+        public Task<T> Remover<T>(int id, string token)
         {
             return SendAsync<T>(new APIRequest()
             {
                 APITipo = DS.APITipo.DELETE,
-                URL = _villaUrl + "/api/NumeroVilla/" + id
+                URL = _villaUrl + "/api/NumeroVilla/" + id,
+                Token = token
             });
         }
     }

@@ -270,3 +270,4 @@ C:\Users\chuy_\source\repos\MagicVilla\EscritorioVillas\obj\Debug\net7.0-windows
 C:\Users\chuy_\source\repos\MagicVilla\EscritorioVillas\obj\Debug\net7.0-windows\EscritorioVillas.pdb
 C:\Users\chuy_\source\repos\MagicVilla\EscritorioVillas\obj\Debug\net7.0-windows\EscritorioVillas.genruntimeconfig.cache
 C:\Users\chuy_\source\repos\MagicVilla\EscritorioVillas\obj\Debug\net7.0-windows\ref\EscritorioVillas.dll
+C:\Users\chuy_\source\repos\MagicVilla\EscritorioVillas\bin\Debug\net7.0-windows\Microsoft.AspNetCore.Authentication.JwtBearer.dll

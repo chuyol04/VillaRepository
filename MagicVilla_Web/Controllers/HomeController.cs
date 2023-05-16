@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MagicVilla_API.Modelos;
+using MagicVilla_Utilidad;
 using MagicVilla_Web.Models;
 using MagicVilla_Web.Models.Dto;
 using MagicVilla_Web.Services.IServices;
@@ -27,7 +28,7 @@ namespace MagicVilla_Web.Controllers
         {
             List<VillaDto> villaList = new();
 
-            var response = await _villaService.ObtenerTodos<APIResponse>();
+            var response = await _villaService.ObtenerTodos<APIResponse>(HttpContext.Session.GetString(DS.SessionToken));
 
             if (response != null && response.IsExitoso)
             {

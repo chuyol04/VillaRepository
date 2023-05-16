@@ -11,5 +11,7 @@ namespace MagicVilla_Web.Models
 
         public object Datos { get; set; }
 
+        public string Token { get; set; }
+
     }
 }
