@@ -3,6 +3,7 @@ using MagicVilla_API.Datos;
 using MagicVilla_API.Modelos;
 using MagicVilla_API.Modelos.Dto;
 using MagicVilla_API.Repositorio.IRepositorio;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -72,6 +73,7 @@ namespace MagicVilla_API.Controllers
         //Hay que diferenciar los endpionts ya que no se pueden tener 2 mismos del HTTPGET, se diferencia poniendo en su atributo
         //que en este caso será el ID
         [HttpGet("{id:int}", Name = "GetNumeroVilla")] //Le asignamos nombre
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]//codigos de estado
         [ProducesResponseType(StatusCodes.Status400BadRequest)]//codigos de estado
         [ProducesResponseType(StatusCodes.Status404NotFound)]//codigos de estado
@@ -121,6 +123,7 @@ namespace MagicVilla_API.Controllers
         }
 
         [HttpPost]//Crear
+        [Authorize(Roles = "admin")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)] //Tamaño maximo del parametro
@@ -182,6 +185,7 @@ namespace MagicVilla_API.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = "admin")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -226,6 +230,7 @@ namespace MagicVilla_API.Controllers
 
 
         [HttpPut("{id:int}")]
+        [Authorize(Roles = "admin")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task <IActionResult>UpdateNumeroVilla(int id, [FromBody] NumeroVillaUpdateDto updateDto)

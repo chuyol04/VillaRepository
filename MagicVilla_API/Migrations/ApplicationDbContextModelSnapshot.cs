@@ -46,6 +46,31 @@ namespace MagicVillaAPI.Migrations
                     b.ToTable("NumeroVillas");
                 });
 
+            modelBuilder.Entity("MagicVilla_API.Modelos.Uusario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nombres")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rol")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usarios");
+                });
+
             modelBuilder.Entity("MagicVilla_API.Modelos.Villa", b =>
                 {
                     b.Property<int>("Id")
@@ -92,8 +117,8 @@ namespace MagicVillaAPI.Migrations
                             Id = 1,
                             Amenidad = "",
                             Detalle = "Detalle de la Villa...",
-                            FechaActualizacion = new DateTime(2023, 5, 11, 0, 59, 55, 163, DateTimeKind.Local).AddTicks(6289),
-                            FechaCreacion = new DateTime(2023, 5, 11, 0, 59, 55, 163, DateTimeKind.Local).AddTicks(6279),
+                            FechaActualizacion = new DateTime(2023, 5, 15, 16, 37, 20, 511, DateTimeKind.Local).AddTicks(2995),
+                            FechaCreacion = new DateTime(2023, 5, 15, 16, 37, 20, 511, DateTimeKind.Local).AddTicks(2984),
                             ImagenUrl = "",
                             MetrosCuadrados = 50,
                             Nombre = "Villa Real",
@@ -105,8 +130,8 @@ namespace MagicVillaAPI.Migrations
                             Id = 2,
                             Amenidad = "",
                             Detalle = "Detalle de la Villa...",
-                            FechaActualizacion = new DateTime(2023, 5, 11, 0, 59, 55, 163, DateTimeKind.Local).AddTicks(6293),
-                            FechaCreacion = new DateTime(2023, 5, 11, 0, 59, 55, 163, DateTimeKind.Local).AddTicks(6292),
+                            FechaActualizacion = new DateTime(2023, 5, 15, 16, 37, 20, 511, DateTimeKind.Local).AddTicks(2998),
+                            FechaCreacion = new DateTime(2023, 5, 15, 16, 37, 20, 511, DateTimeKind.Local).AddTicks(2997),
                             ImagenUrl = "",
                             MetrosCuadrados = 40,
                             Nombre = "Premium Vista a la piscina",

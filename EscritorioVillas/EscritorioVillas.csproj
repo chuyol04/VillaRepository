@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MagicVilla_API\MagicVilla_API.csproj" />
+    <ProjectReference Include="..\MagicVilla_Utilidad\MagicVilla_Utilidad.csproj" />
+    <ProjectReference Include="..\MagicVilla_Web\MagicVilla_Web.csproj" />
+  </ItemGroup>
+
+</Project>

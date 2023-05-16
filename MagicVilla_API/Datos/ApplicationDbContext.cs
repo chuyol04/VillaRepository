@@ -15,6 +15,8 @@ namespace MagicVilla_API.Datos
         //se crea tablas en BD
         public DbSet<Villa> Villas { get; set; }
 
+        public DbSet<Uusario> Usarios { get; set; }
+
         //migracion para tabla en BD 
         public DbSet<NumeroVilla> NumeroVillas { get; set; }
 

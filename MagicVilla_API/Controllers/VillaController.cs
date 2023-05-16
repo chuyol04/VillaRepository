@@ -3,6 +3,7 @@ using MagicVilla_API.Datos;
 using MagicVilla_API.Modelos;
 using MagicVilla_API.Modelos.Dto;
 using MagicVilla_API.Repositorio.IRepositorio;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -40,6 +41,7 @@ namespace MagicVilla_API.Controllers
         //1- Endpoint que regresa toda la lista dividido de 2 maneras, uno donde obtiene de todo el modelo
         //y otro donde lo obtenemos de un store
         [HttpGet]
+        [Authorize] //indica que si quiero acceder tengo que estar autorizado
         [ProducesResponseType(StatusCodes.Status200OK)]//codigos de estado
         //cada endpoint retorna ahora un API RESPONSE
         public async Task< ActionResult<APIResponse>> GetVillas()
@@ -82,6 +84,7 @@ namespace MagicVilla_API.Controllers
         //Hay que diferenciar los endpionts ya que no se pueden tener 2 mismos del HTTPGET, se diferencia poniendo en su atributo
         //que en este caso será el ID
         [HttpGet("{id:int}", Name = "GetVilla")] //Le asignamos nombre
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]//codigos de estado
         [ProducesResponseType(StatusCodes.Status400BadRequest)]//codigos de estado
         [ProducesResponseType(StatusCodes.Status404NotFound)]//codigos de estado
@@ -134,6 +137,7 @@ namespace MagicVilla_API.Controllers
 
         [HttpPost]//Crear
         [ProducesResponseType(StatusCodes.Status201Created)]
+        [Authorize(Roles ="admin")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)] //Tamaño maximo del parametro
         public async Task<ActionResult<APIResponse>> CrearVilla([FromBody] VillaCreateDto createDto)
@@ -207,6 +211,7 @@ namespace MagicVilla_API.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = "admin")] //solo los admin
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -252,6 +257,7 @@ namespace MagicVilla_API.Controllers
 
 
         [HttpPut("{id:int}")]
+        [Authorize(Roles = "admin")] //solo los admin
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task <IActionResult>UpdateVilla(int id, [FromBody] VillaUpdateDto updateDto)
@@ -294,6 +300,7 @@ namespace MagicVilla_API.Controllers
         }
 
         [HttpPatch("{id:int}")]
+        [Authorize(Roles = "admin")] // solo admin
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task <IActionResult> UpdatePartialVilla(int id, JsonPatchDocument<VillaUpdateDto> patchDto)
