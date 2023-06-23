@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ziMepdF8I8vymsovcbp+TaocGtJav8me3YNB8aJ7ttL+BKHeBHkWG2RxKUjyKqKJDPHOj4sDDlQVE9NJbyJyWw==",
+  "dgSpecHash": "5bHxFN4fn4mVUHFEWd4EZ6Knt3CKXZ0BlMBGJv5sUR/xExdYRXi1G0vYeV+exX49y5MOPXYfqX3NcyZ3URMsiQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj",
+  "projectFilePath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chuy_\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\chuy_\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -12,6 +12,8 @@
     "C:\\Users\\chuy_\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.5\\microsoft.aspnetcore.authentication.jwtbearer.7.0.5.nupkg.sha512",
     "C:\\Users\\chuy_\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.0\\microsoft.aspnetcore.jsonpatch.7.0.0.nupkg.sha512",
     "C:\\Users\\chuy_\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\7.0.0\\microsoft.aspnetcore.mvc.newtonsoftjson.7.0.0.nupkg.sha512",
+    "C:\\Users\\chuy_\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\chuy_\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.0.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.0.0.nupkg.sha512",
     "C:\\Users\\chuy_\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.4\\microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
     "C:\\Users\\chuy_\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\chuy_\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

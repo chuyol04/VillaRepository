@@ -9,81 +9,81 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MagicVilla_Web
 build_property.RootNamespace = MagicVilla_Web
-build_property.ProjectDir = C:\Users\chuy_\source\repos\MagicVilla\MagicVilla_Web\
+build_property.ProjectDir = C:\Users\chuy_\source\repos\chuyol04\MagicVilla\MagicVilla_Web\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\chuy_\source\repos\MagicVilla\MagicVilla_Web
+build_property.MSBuildProjectDirectory = C:\Users\chuy_\source\repos\chuyol04\MagicVilla\MagicVilla_Web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/Home/Index.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/Home/Privacy.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/NumeroVilla/ActualizarNumeroVilla.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/NumeroVilla/ActualizarNumeroVilla.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVtZXJvVmlsbGFcQWN0dWFsaXphck51bWVyb1ZpbGxhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/NumeroVilla/CrearNumeroVilla.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/NumeroVilla/CrearNumeroVilla.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVtZXJvVmlsbGFcQ3JlYXJOdW1lcm9WaWxsYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/NumeroVilla/IndexnumeroVilla.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/NumeroVilla/IndexnumeroVilla.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVtZXJvVmlsbGFcSW5kZXhudW1lcm9WaWxsYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/NumeroVilla/RemoverNumeroVilla.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/NumeroVilla/RemoverNumeroVilla.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVtZXJvVmlsbGFcUmVtb3Zlck51bWVyb1ZpbGxhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/Shared/Error.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/Usuario/AccesoDenegado.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/Usuario/AccesoDenegado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xBY2Nlc29EZW5lZ2Fkby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/Usuario/Login.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/Usuario/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/Usuario/Registrar.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/Usuario/Registrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xSZWdpc3RyYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/Villa/ActualizarVilla.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/Villa/ActualizarVilla.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlsbGFcQWN0dWFsaXphclZpbGxhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/Villa/CrearVilla.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/Villa/CrearVilla.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlsbGFcQ3JlYXJWaWxsYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/Villa/IndexVilla.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/Villa/IndexVilla.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlsbGFcSW5kZXhWaWxsYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/Villa/RemoverVilla.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/Villa/RemoverVilla.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlsbGFcUmVtb3ZlclZpbGxhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/_ViewImports.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/_ViewStart.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chuy_/source/repos/MagicVilla/MagicVilla_Web/Views/Shared/_Layout.cshtml]
+[C:/Users/chuy_/source/repos/chuyol04/MagicVilla/MagicVilla_Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-is25y6sqrq

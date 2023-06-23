@@ -3,6 +3,7 @@ using MagicVilla_API.Datos;
 using MagicVilla_API.Repositorio;
 using MagicVilla_API.Repositorio.IRepositorio;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -43,7 +44,21 @@ builder.Services.AddSwaggerGen(options => {
             new List<string>()
         }
     });
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "Magic Villa v1",
+        Description = "Api para villas"
+    });
+    options.SwaggerDoc("v2", new OpenApiInfo
+    {
+        Version = "v2",
+        Title = "Magic Villa v2",
+        Description = "Api para villas"
+    });
 });
+
+
 
 var key = builder.Configuration.GetValue<string>("ApiSettings:Secret");
 
@@ -78,12 +93,34 @@ builder.Services.AddScoped<IVillaRepositorio, VillaRepositorio>();
 builder.Services.AddScoped<INumeroVillaRepositorio, NumeroVillaRepositorio>(); //el nuevo
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();//servicio para usuarios
 
+//Versioning
+builder.Services.AddApiVersioning(options =>
+{
+    //agarre la version por defalult
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    //Esto agarra la ultima versión por default 1.0
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.ReportApiVersions = true;
+});
+
+builder.Services.AddVersionedApiExplorer(options =>
+{
+    options.GroupNameFormat = "'v'VVV";
+    //Remplaza la URL con el numero de version que yo quiero manejar.
+    options.SubstituteApiVersionInUrl = true;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "Magic_VillaV1");
+        options.SwaggerEndpoint("/swagger/v2/swagger.json", "Magic_VillaV2");
+    });
     app.UseSwaggerUI();
 }
 

@@ -10,10 +10,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 
-namespace MagicVilla_API.Controllers
+namespace MagicVilla_API.Controllers.v1
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class VillaController : ControllerBase
     {
         //Crear variable privada. Variables privadas con guiones bajo
@@ -44,7 +45,7 @@ namespace MagicVilla_API.Controllers
         [Authorize] //indica que si quiero acceder tengo que estar autorizado
         [ProducesResponseType(StatusCodes.Status200OK)]//codigos de estado
         //cada endpoint retorna ahora un API RESPONSE
-        public async Task< ActionResult<APIResponse>> GetVillas()
+        public async Task<ActionResult<APIResponse>> GetVillas()
         {
             try
             {
@@ -88,7 +89,7 @@ namespace MagicVilla_API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]//codigos de estado
         [ProducesResponseType(StatusCodes.Status400BadRequest)]//codigos de estado
         [ProducesResponseType(StatusCodes.Status404NotFound)]//codigos de estado
-        public async Task <ActionResult<APIResponse>> GetVilla(int id)
+        public async Task<ActionResult<APIResponse>> GetVilla(int id)
         {
 
             try
@@ -119,7 +120,7 @@ namespace MagicVilla_API.Controllers
                 }
 
                 _response.Resultado = _mapper.Map<VillaDto>(villa);
-                _response.statusCode= HttpStatusCode.OK;
+                _response.statusCode = HttpStatusCode.OK;
 
                 //return Ok(villa); ANTES
 
@@ -137,7 +138,7 @@ namespace MagicVilla_API.Controllers
 
         [HttpPost]//Crear
         [ProducesResponseType(StatusCodes.Status201Created)]
-        [Authorize(Roles ="admin")]
+        [Authorize(Roles = "admin")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)] //Tamaño maximo del parametro
         public async Task<ActionResult<APIResponse>> CrearVilla([FromBody] VillaCreateDto createDto)
@@ -215,13 +216,13 @@ namespace MagicVilla_API.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task <IActionResult> DeleteVilla(int id) 
+        public async Task<IActionResult> DeleteVilla(int id)
         {
             try
             {
                 //la variable id es lo que yo tengo en la lista
                 //Si uno de los ID que estamos enviando empata con los que tenemos en la lista
-                
+
                 if (id == 0)
                 {
                     _response.IsExitoso = false;
@@ -252,7 +253,7 @@ namespace MagicVilla_API.Controllers
             }
 
             return BadRequest(_response);
-            
+
         }
 
 
@@ -260,13 +261,13 @@ namespace MagicVilla_API.Controllers
         [Authorize(Roles = "admin")] //solo los admin
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task <IActionResult>UpdateVilla(int id, [FromBody] VillaUpdateDto updateDto)
+        public async Task<IActionResult> UpdateVilla(int id, [FromBody] VillaUpdateDto updateDto)
         {
-            if(updateDto == null || id != updateDto.Id)
+            if (updateDto == null || id != updateDto.Id)
             {
                 _response.IsExitoso = false;
                 _response.statusCode = HttpStatusCode.BadRequest;
-                return BadRequest(_response); 
+                return BadRequest(_response);
             }
 
             /*tengo el registro antes de actualizarlo
@@ -303,7 +304,7 @@ namespace MagicVilla_API.Controllers
         [Authorize(Roles = "admin")] // solo admin
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task <IActionResult> UpdatePartialVilla(int id, JsonPatchDocument<VillaUpdateDto> patchDto)
+        public async Task<IActionResult> UpdatePartialVilla(int id, JsonPatchDocument<VillaUpdateDto> patchDto)
         {
             if (patchDto == null || id == 0)
             {
@@ -313,7 +314,7 @@ namespace MagicVilla_API.Controllers
             //tengo el registro antes de actualizarlo
             //var villa = VillaStore.villaList.FirstOrDefault(v => v.Id == id);
 
-            var villa = await _villaRepo.Obtener(v => v.Id == id, tracked:false);
+            var villa = await _villaRepo.Obtener(v => v.Id == id, tracked: false);
 
             /*
             VillaUpdateDto villaDto = new()
@@ -338,7 +339,7 @@ namespace MagicVilla_API.Controllers
             patchDto.ApplyTo(villaDto, ModelState);
 
             //validar si no es valido
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }

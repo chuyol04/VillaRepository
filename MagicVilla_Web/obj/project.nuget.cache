@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+KckB2gdMZW2ZavElv7MnFY2cSPgF58kmXofnKg0Ex7z/xs6ONlADYwlwX6buTjZ5tiNsSi/iBSbMKqNBx+UtA==",
+  "dgSpecHash": "sGjHhWXjF2qJ18w0Js0JLymXYtedS4t5oFUfKB6p23Q/e2EyW6mcqw02Yqf0RYQjwl36azbj898dfgzFkyV4gw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj",
+  "projectFilePath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chuy_\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\chuy_\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\EscritorioVillas\\EscritorioVillas.csproj": {}
+    "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\EscritorioVillas\\EscritorioVillas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\EscritorioVillas\\EscritorioVillas.csproj": {
+    "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\EscritorioVillas\\EscritorioVillas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\EscritorioVillas\\EscritorioVillas.csproj",
+        "projectUniqueName": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\EscritorioVillas\\EscritorioVillas.csproj",
         "projectName": "EscritorioVillas",
-        "projectPath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\EscritorioVillas\\EscritorioVillas.csproj",
+        "projectPath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\EscritorioVillas\\EscritorioVillas.csproj",
         "packagesPath": "C:\\Users\\chuy_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\EscritorioVillas\\obj\\",
+        "outputPath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\EscritorioVillas\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,14 +33,14 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj": {
-                "projectPath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj"
+              "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj": {
+                "projectPath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj"
               },
-              "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj": {
-                "projectPath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj"
+              "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj": {
+                "projectPath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj"
               },
-              "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj": {
-                "projectPath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj"
+              "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj": {
+                "projectPath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj"
               }
             }
           }
@@ -77,14 +77,14 @@
         }
       }
     },
-    "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj": {
+    "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj",
+        "projectUniqueName": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj",
         "projectName": "MagicVilla_API",
-        "projectPath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj",
+        "projectPath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_API\\MagicVilla_API.csproj",
         "packagesPath": "C:\\Users\\chuy_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_API\\obj\\",
+        "outputPath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -138,6 +138,14 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.4, )"
@@ -180,14 +188,14 @@
         }
       }
     },
-    "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj": {
+    "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj",
+        "projectUniqueName": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj",
         "projectName": "MagicVilla_Utilidad",
-        "projectPath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj",
+        "projectPath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj",
         "packagesPath": "C:\\Users\\chuy_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Utilidad\\obj\\",
+        "outputPath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Utilidad\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -240,14 +248,14 @@
         }
       }
     },
-    "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj": {
+    "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj",
+        "projectUniqueName": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj",
         "projectName": "MagicVilla_Web",
-        "projectPath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj",
+        "projectPath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Web\\MagicVilla_Web.csproj",
         "packagesPath": "C:\\Users\\chuy_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Web\\obj\\",
+        "outputPath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -269,8 +277,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj": {
-                "projectPath": "C:\\Users\\chuy_\\source\\repos\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj"
+              "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj": {
+                "projectPath": "C:\\Users\\chuy_\\source\\repos\\chuyol04\\MagicVilla\\MagicVilla_Utilidad\\MagicVilla_Utilidad.csproj"
               }
             }
           }
