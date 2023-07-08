@@ -13,5 +13,7 @@ namespace MagicVilla_API.Modelos
 
         //objeto resultado puede ser lista, objeto, etc, esta propiedad almacena lo que sea, ESTANDAR
         public object Resultado { get; set; }
+
+        public int TotalPaginas { get; set; }
     }
 }
