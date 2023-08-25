@@ -1,16 +1,20 @@
 ﻿using MagicVilla_API.Modelos;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 
 namespace MagicVilla_API.Datos
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<UsuarioAplicacion>
     {
         //constructor. base es de donde hereda. 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :base(options)
         {
             
         }
+
+        //se crea tabla que estara asociada
+        public DbSet<UsuarioAplicacion> UsuariosAplicacion { get; set; }
 
         //se crea tablas en BD
         public DbSet<Villa> Villas { get; set; }
@@ -22,6 +26,8 @@ namespace MagicVilla_API.Datos
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //para que todo se relacione y no haya tema con primary key con el identity
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Villa>().HasData(
                 new Villa()
                 {

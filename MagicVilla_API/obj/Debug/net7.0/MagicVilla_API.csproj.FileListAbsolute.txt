@@ -166,3 +166,4 @@ C:\Users\chuy_\source\repos\chuyol04\MagicVilla\MagicVilla_API\obj\Debug\net7.0\
 C:\Users\chuy_\source\repos\chuyol04\MagicVilla\MagicVilla_API\obj\Debug\net7.0\MagicVilla_API.pdb
 C:\Users\chuy_\source\repos\chuyol04\MagicVilla\MagicVilla_API\obj\Debug\net7.0\MagicVilla_API.genruntimeconfig.cache
 C:\Users\chuy_\source\repos\chuyol04\MagicVilla\MagicVilla_API\obj\Debug\net7.0\ref\MagicVilla_API.dll
+C:\Users\chuy_\source\repos\chuyol04\MagicVilla\MagicVilla_API\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

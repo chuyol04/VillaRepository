@@ -1,7 +1,9 @@
-﻿using MagicVilla_API.Datos;
+﻿using AutoMapper;
+using MagicVilla_API.Datos;
 using MagicVilla_API.Modelos;
 using MagicVilla_API.Modelos.Dto;
 using MagicVilla_API.Repositorio.IRepositorio;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -13,20 +15,24 @@ namespace MagicVilla_API.Repositorio
     public class UsuarioRepositorio : IUsuarioRepositorio
     {
         private readonly ApplicationDbContext _db;
-        //token
         private string secretKey;
+        private readonly UserManager<UsuarioAplicacion> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IMapper _mapper;
 
-        public UsuarioRepositorio(ApplicationDbContext db, IConfiguration configuration)
+        public UsuarioRepositorio(ApplicationDbContext db, IConfiguration configuration, UserManager<UsuarioAplicacion> userManager,
+                                  IMapper mapper, RoleManager<IdentityRole> roleManager)
         {
             _db = db;
-            //token desde appsettingkjson
             secretKey = configuration.GetValue<string>("ApiSettings:Secret");
+            _userManager = userManager;
+            _mapper = mapper;
+            _roleManager = roleManager;
         }
-
 
         public bool IsUsuarioUnico(string userName)
         {
-            var usuario = _db.Usarios.FirstOrDefault(u => u.UserName.ToLower() == userName.ToLower());
+            var usuario = _db.UsuariosAplicacion.FirstOrDefault(u => u.UserName.ToLower() == userName.ToLower());
             if (usuario == null)
             {
                 return true;
@@ -36,59 +42,76 @@ namespace MagicVilla_API.Repositorio
 
         public async Task<LoginResponseDto> Login(LoginRequestDto loginRequestDTO)
         {
-            //validar si el usuario que se desea registrar exsite en la BD
-            var usuario = await _db.Usarios.FirstOrDefaultAsync(u => u.UserName.ToLower() == loginRequestDTO.UserName.ToLower() && 
-                                                                u.Password == loginRequestDTO.Password);
-            if (usuario == null)
+            var usuario = await _db.UsuariosAplicacion.FirstOrDefaultAsync(u => u.UserName.ToLower() == loginRequestDTO.UserName.ToLower());
+
+            bool isValido = await _userManager.CheckPasswordAsync(usuario, loginRequestDTO.Password);
+
+            if (usuario == null || isValido == false)
             {
-                //si es null 
                 return new LoginResponseDto()
                 {
                     Token = "",
                     Usuario = null
                 };
             }
-
-            //Si usuario existe generamos el TOKEN el jw token
+            // Si Usuario Existe Generamos el JW Token
+            var roles = await _userManager.GetRolesAsync(usuario);
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(secretKey);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, usuario.Id.ToString()),
-                    new Claim(ClaimTypes.Role, usuario.Rol)
+                    new Claim(ClaimTypes.Name, usuario.UserName.ToString()),
+                    new Claim(ClaimTypes.Role, roles.FirstOrDefault())
                 }),
-                //tiempo que dura el toke, le puse 2 dias
-                Expires = DateTime.UtcNow.AddDays(2),
-                SigningCredentials = new (new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            //se comienza a llenar con el token y usuario
             LoginResponseDto loginResponseDTO = new()
             {
                 Token = tokenHandler.WriteToken(token),
-                Usuario = usuario
+                Usuario = _mapper.Map<UsuarioDto>(usuario)
             };
-
             return loginResponseDTO;
-
         }
 
-        public async Task<Uusario> Registrar(RegistroRequestDto registroRequestDto)
+        public async Task<UsuarioDto> Registrar(RegistroRequestDto registroRequestDTO)
         {
-            Uusario usuario = new()
+            UsuarioAplicacion usuario = new()
             {
-                UserName = registroRequestDto.UserName,
-                Password = registroRequestDto.Password,
-                Nombres = registroRequestDto.Nombres,
-                Rol = registroRequestDto.Rol
-
+                UserName = registroRequestDTO.UserName,
+                Email = registroRequestDTO.UserName,
+                NormalizedEmail = registroRequestDTO.UserName.ToUpper(),
+                Nombres = registroRequestDTO.Nombres,
             };
-            await _db.Usarios.AddAsync(usuario);
-            await _db.SaveChangesAsync();
-            usuario.Password = "";
-            return usuario;
+
+            try
+            {
+                var resultado = await _userManager.CreateAsync(usuario, registroRequestDTO.Password);
+                if (resultado.Succeeded)
+                {
+                    if (!_roleManager.RoleExistsAsync("admin").GetAwaiter().GetResult())
+                    {
+                        await _roleManager.CreateAsync(new IdentityRole("admin"));
+                        await _roleManager.CreateAsync(new IdentityRole("cliente"));
+                    }
+
+
+                    await _userManager.AddToRoleAsync(usuario, "admin");
+                    var usuarioAp = _db.UsuariosAplicacion.FirstOrDefault(u => u.UserName == registroRequestDTO.UserName);
+                    return _mapper.Map<UsuarioDto>(usuarioAp);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return new UsuarioDto();
+
         }
     }
 }

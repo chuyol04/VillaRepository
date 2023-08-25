@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using MagicVilla_API.Modelos.Especificaciones;
+using System.Linq.Expressions;
 
 namespace MagicVilla_API.Repositorio.IRepositorio
 {
@@ -9,6 +10,8 @@ namespace MagicVilla_API.Repositorio.IRepositorio
         /*devolver lista de objetos de tipo T llamado Obtener todos y toma el parametro opcional filtro de tipo expression.
          *de manera asincrona que cumplen con una condicion especificada */
         Task<List<T>> ObtenerTodos(Expression<Func<T, bool>>? filtro = null, string? incluirPropiedades = null);
+
+        PagedList<T>ObtenerTodosPaginado(Parametros parametros,Expression<Func<T, bool>>? filtro = null, string? incluirPropiedades = null);
 
         //"tracked" de tipo bool que se utiliza para indicar si el objeto devuelto debe ser rastreado
         //por el contexto de Entity Framework o no.

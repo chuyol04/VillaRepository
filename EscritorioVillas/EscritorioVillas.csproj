@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.32.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MagicVilla_API\MagicVilla_API.csproj" />
     <ProjectReference Include="..\MagicVilla_Utilidad\MagicVilla_Utilidad.csproj" />
     <ProjectReference Include="..\MagicVilla_Web\MagicVilla_Web.csproj" />
