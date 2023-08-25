@@ -57,7 +57,8 @@ namespace MagicVilla_API.Repositorio
             // Si Usuario Existe Generamos el JW Token
             var roles = await _userManager.GetRolesAsync(usuario);
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(secretKey);
+            //lo tuve que parchar
+            var key = Encoding.ASCII.GetBytes("a2c1f6d3e5h0j8l9n4p7r5t1v3x6z9B1D3F5H0J8L");
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
