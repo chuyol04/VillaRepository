@@ -5,9 +5,11 @@ using MagicVilla_Web.Models.Dto;
 using MagicVilla_Web.Models.ViewModel;
 using MagicVilla_Web.Services;
 using MagicVilla_Web.Services.IServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
+using System.Data;
 
 namespace MagicVilla_Web.Controllers
 {
@@ -25,8 +27,8 @@ namespace MagicVilla_Web.Controllers
             _mapper = mapper;
         }
 
-       
 
+        [Authorize(Roles = "admin")]
         public async Task <IActionResult> IndexnumeroVilla()
         {
             List<NumeroVillaDto> numerovillaList = new();
@@ -41,6 +43,7 @@ namespace MagicVilla_Web.Controllers
             return View(numerovillaList);
         }
 
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> CrearNumeroVilla()
         {
             NumeroVillaViewModel numeroVillaVM = new();
@@ -98,6 +101,7 @@ namespace MagicVilla_Web.Controllers
 
         //deeb se exacto el parametro que tengo en el viws de numero vila villaNo
         //metodo get llamada
+        [Authorize(Roles = "admin")]
         public async Task <IActionResult> ActualizarNumeroVilla(int villaNo)
         {
             NumeroVillaUpdateViewModel numeroVillaVM = new();
@@ -164,6 +168,7 @@ namespace MagicVilla_Web.Controllers
 
 
         //metodo get llamada
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> RemoverNumeroVilla(int villaNo)
         {
             NumeroVillaDeleteViewModel numeroVillaVM = new();
